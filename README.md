@@ -205,6 +205,26 @@ TOP_K_CHUNKS=10
 
 ## Deployment
 
+### 🚀 Quick Deploy to Vercel (Free)
+
+**Deploy your app to Vercel for free in 30 minutes:**
+
+See: [QUICK_START_VERCEL.md](./QUICK_START_VERCEL.md)
+
+Free tier includes:
+- Frontend on Vercel
+- Backend on Vercel Functions
+- Database on Supabase (500MB free)
+- Cache on Upstash (10K commands/day free)
+- Embeddings via Hugging Face (free)
+- AI via Gemini (60 calls/min free)
+
+**Total cost: $0/month** 💰
+
+Detailed setup guide: [VERCEL_SETUP.md](./VERCEL_SETUP.md)
+
+---
+
 ### Docker Deployment
 ```bash
 docker build -f backend/Dockerfile -t ai-doc-intelligence-backend ./backend

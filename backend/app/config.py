@@ -29,6 +29,9 @@ class Settings(BaseSettings):
     gemini_api_key: str = os.getenv("GEMINI_API_KEY", "")
     gemini_model: str = "gemini-pro"
 
+    # Hugging Face API (for embeddings)
+    huggingface_api_key: str = os.getenv("HUGGINGFACE_API_KEY", "")
+
     # Embeddings
     embedding_model: str = "sentence-transformers/all-minilm-l6-v2"
     embedding_dimension: int = 384

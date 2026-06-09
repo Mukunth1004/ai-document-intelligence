@@ -68,5 +68,5 @@ class RetrievalService:
         chunks = result.scalars().all()
 
         for chunk in chunks:
-            embedding = embedding_service.embed_text(chunk.text_content)
+            embedding = await embedding_service.embed_text(chunk.text_content)
             await RetrievalService.store_embedding(db, str(chunk.id), embedding)
