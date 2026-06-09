@@ -4,7 +4,7 @@ from uuid import UUID
 from typing import List
 from ..models import ChatSession, ChatMessage
 from ..rag.retrieval_service import RetrievalService
-from ..rag.claude_client import get_claude_client
+from ..rag.gemini_client import get_gemini_client
 from ..config import get_settings
 
 settings = get_settings()
@@ -120,8 +120,8 @@ class ChatService:
             for chunk, _ in retrieved_chunks
         ])
 
-        claude_client = get_claude_client()
-        response = await claude_client.generate_response(
+        gemini_client = get_gemini_client()
+        response = await gemini_client.generate_response(
             query=query,
             context=context
         )

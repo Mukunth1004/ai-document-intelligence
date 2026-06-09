@@ -9,7 +9,7 @@ from .schemas import (
     ChatSessionResponse, ChatHistoryResponse, SourceDocument
 )
 from .services import ChatService
-from ..rag.claude_client import get_claude_client
+from ..rag.gemini_client import get_gemini_client
 import time
 import json
 
@@ -71,9 +71,9 @@ async def chat_stream(
             document_ids=chat_request.document_ids
         )
 
-        claude_client = get_claude_client()
+        gemini_client = get_gemini_client()
 
-        async for chunk in claude_client.stream_response(
+        async for chunk in gemini_client.stream_response(
             query=chat_request.query,
             context="\n\n".join([
                 f"Document: {doc_chunk.document.file_name}\nChunk {doc_chunk.chunk_index}:\n{doc_chunk.text_content}"

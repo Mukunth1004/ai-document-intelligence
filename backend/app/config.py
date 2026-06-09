@@ -25,9 +25,9 @@ class Settings(BaseSettings):
     jwt_expiration_hours: int = 24
     refresh_token_expiration_days: int = 7
 
-    # Claude API
-    claude_api_key: str = os.getenv("CLAUDE_API_KEY", "")
-    claude_model: str = "claude-3-5-sonnet-20241022"
+    # Google Gemini API
+    gemini_api_key: str = os.getenv("GEMINI_API_KEY", "")
+    gemini_model: str = "gemini-pro"
 
     # Embeddings
     embedding_model: str = "sentence-transformers/all-minilm-l6-v2"

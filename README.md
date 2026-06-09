@@ -19,7 +19,7 @@ A production-grade FastAPI microservice for intelligent document Q&A using Claud
 - **Framework**: FastAPI 0.104.1
 - **Database**: PostgreSQL 15+ with pgvector
 - **Cache**: Redis 5.0.0
-- **LLM**: Claude API (anthropic 0.7.1)
+- **LLM**: Google Gemini API (google-generativeai 0.3.0)
 - **Embeddings**: sentence-transformers 2.2.2
 - **Async**: asyncpg, httpx
 
@@ -42,7 +42,7 @@ A production-grade FastAPI microservice for intelligent document Q&A using Claud
 - Docker & Docker Compose
 - PostgreSQL 15+ (or use docker-compose)
 - Redis (or use docker-compose)
-- Claude API key
+- Google Gemini API key (free at https://ai.google.dev/)
 
 ### Local Development
 
@@ -55,8 +55,8 @@ A production-grade FastAPI microservice for intelligent document Q&A using Claud
 2. **Set up environment variables**
    ```bash
    cp backend/.env.example backend/.env
-   # Edit backend/.env with your configuration
-   export CLAUDE_API_KEY="your-api-key-here"
+   # Edit backend/.env with your Gemini API key
+   # GEMINI_API_KEY=AIzaSy... (from https://ai.google.dev/)
    ```
 
 3. **Start with Docker Compose**
@@ -183,8 +183,8 @@ DATABASE_URL=postgresql+asyncpg://user:password@localhost:5432/ai_doc_intelligen
 # Cache
 REDIS_URL=redis://localhost:6379
 
-# Claude AI
-CLAUDE_API_KEY=sk-ant-...
+# Google Gemini API
+GEMINI_API_KEY=AIzaSy...
 
 # JWT
 JWT_SECRET=your-secret-key-change-in-production
