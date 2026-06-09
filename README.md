@@ -205,23 +205,34 @@ TOP_K_CHUNKS=10
 
 ## Deployment
 
-### 🚀 Quick Deploy to Vercel (Free)
+### 🚀 Deploy to Vercel (FREE)
 
-**Deploy your app to Vercel for free in 30 minutes:**
+**Deploy your complete app to Vercel in 10 minutes:**
 
-See: [QUICK_START_VERCEL.md](./QUICK_START_VERCEL.md)
+See: [DEPLOY_MONOREPO_VERCEL.md](./DEPLOY_MONOREPO_VERCEL.md)
+
+This is the **recommended approach** - deploys frontend + backend from a single repository:
+
+```
+https://your-domain.vercel.app              ← Frontend
+https://your-domain.vercel.app/_/backend    ← Backend API
+```
 
 Free tier includes:
-- Frontend on Vercel
-- Backend on Vercel Functions
-- Database on Supabase (500MB free)
-- Cache on Upstash (10K commands/day free)
-- Embeddings via Hugging Face (free)
-- AI via Gemini (60 calls/min free)
+- ✅ Frontend deployment (Vercel)
+- ✅ Backend API (Vercel Functions)
+- ✅ Database (Supabase - 500MB free)
+- ✅ Cache (Upstash - 10K commands/day free)
+- ✅ Embeddings (Hugging Face - free)
+- ✅ AI (Google Gemini - 60/min free)
 
 **Total cost: $0/month** 💰
 
-Detailed setup guide: [VERCEL_SETUP.md](./VERCEL_SETUP.md)
+### Alternative: Separate Deployments
+
+If you prefer separate frontend/backend deployments:
+- Frontend setup: [QUICK_START_VERCEL.md](./QUICK_START_VERCEL.md)
+- Detailed guide: [VERCEL_SETUP.md](./VERCEL_SETUP.md)
 
 ---
 

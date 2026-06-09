@@ -1,21 +1,29 @@
 {
-  "buildCommand": "cd backend && pip install -r requirements.txt",
-  "outputDirectory": "backend",
-  "framework": "python-fastapi",
-  "env": {
-    "PYTHONUNBUFFERED": "1"
-  },
+  "version": 2,
+  "buildCommand": "cd backend && pip install -r requirements.txt && cd ../frontend && npm install && npm run build",
+  "outputDirectory": "frontend/.next",
+  "framework": "nextjs",
+  "regions": ["iad1"],
   "functions": {
     "backend/app/main.py": {
       "runtime": "python3.11",
-      "maxDuration": 30,
-      "memory": 512
+      "memory": 512,
+      "maxDuration": 30
     }
   },
+  "env": {
+    "PYTHONUNBUFFERED": "1"
+  },
+  "rewrites": [
+    {
+      "source": "/_/backend/(.*)",
+      "destination": "/backend/app/main.py"
+    }
+  ],
   "routes": [
     {
-      "src": "/api/.*",
-      "dest": "backend/app/main.py"
+      "src": "/_/backend/(.*)",
+      "dest": "/backend/app/main.py"
     }
   ]
 }

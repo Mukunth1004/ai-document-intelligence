@@ -1,6 +1,23 @@
 import axios, { AxiosInstance } from 'axios';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+// Determine API URL based on environment
+const getApiUrl = () => {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
+  if (!apiUrl) {
+    // Default for development
+    return 'http://localhost:3000/_/backend';
+  }
+
+  // Handle relative URLs (for production on Vercel)
+  if (apiUrl.startsWith('//')) {
+    return apiUrl;
+  }
+
+  return apiUrl;
+};
+
+const API_URL = getApiUrl();
 
 class APIClient {
   private client: AxiosInstance;
