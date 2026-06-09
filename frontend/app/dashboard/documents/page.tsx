@@ -119,7 +119,10 @@ export default function DocumentsPage() {
               accept=".pdf,.txt,.docx,.md"
             />
             <button
-              onClick={() => document.querySelector('input[type="file"]')?.click()}
+              onClick={() => {
+                const input = document.querySelector('input[type="file"]') as HTMLInputElement;
+                input?.click();
+              }}
               disabled={uploading}
               className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition disabled:opacity-50"
             >

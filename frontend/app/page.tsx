@@ -12,7 +12,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       <div className="flex flex-col items-center justify-center min-h-screen px-4">
         <div className="text-center max-w-2xl">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
@@ -41,7 +41,7 @@ export default function Home() {
               </li>
               <li className="flex items-center">
                 <span className="mr-2">✓</span>
-                <500ms response time with caching
+                Less than 500ms response time with caching
               </li>
             </ul>
           </div>
@@ -73,6 +73,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
