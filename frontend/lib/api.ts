@@ -6,12 +6,16 @@ const getApiUrl = () => {
 
   if (!apiUrl) {
     // Default for development
-    return 'http://localhost:3000/_/backend';
+    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+      return 'http://localhost:3000/_/backend';
+    }
+    // Default for production: use relative URL
+    return '/_/backend';
   }
 
   // Handle relative URLs (for production on Vercel)
   if (apiUrl.startsWith('//')) {
-    return apiUrl;
+    return apiUrl.substring(1); // Remove leading /
   }
 
   return apiUrl;
